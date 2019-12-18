@@ -78,7 +78,7 @@ class GoalController extends Controller
                 'results', $userId . '-' . $goalId . '-' . Carbon::now() . '.' . $request->file('file')->getClientOriginalExtension()
             );
             $userGoal = UserGoal::find($goalId);
-            $userGoal->result_file = $path;
+            $userGoal->result_file = Storage::url($path);
             $userGoal->status = 'Ожидает проверки';
             $userGoal->save();
         }

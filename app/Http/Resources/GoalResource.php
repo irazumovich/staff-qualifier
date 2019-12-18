@@ -16,7 +16,7 @@ class GoalResource extends JsonResource
     public function toArray($request)
     {
         $taskFile = $this->getTaskIleAttribute()->first();
-        $modelId = $this->getTaskIleAttribute()->first() ? $this->getTaskIleAttribute()->first()->order_column : '';
+        $modelId = $this->getTaskIleAttribute()->first() ? $this->getTaskIleAttribute()->first()->id : '';
         return [
             'pivot' => $this->pivot,
             'file' => $this->getTaskIleAttribute(),
@@ -28,8 +28,8 @@ class GoalResource extends JsonResource
             'additional_materials' => $this->additional_materials,
             'task_file' => Storage::has("$modelId/" . $taskFile->file_name) ?
                 Storage::url("$modelId/" . $taskFile->file_name) : '',
-            'result_file' => Storage::has(auth('api-jwt')->user()->id . '/' . $this->pivot->result_file) ?
-                Storage::url(auth('api-jwt')->user()->id . '/' . $this->pivot->result_file) : '',
+            'result_file' => Storage::has($this->pivot->result_file) ?
+                Storage::url($this->pivot->result_file) : '',
             'status' => $this->pivot->status,
             'mentor_id' => $this->pivot->mentor_id,
             'assess_goals' => $this->assess_goals,
