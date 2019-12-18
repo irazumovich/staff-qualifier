@@ -122,6 +122,30 @@
     </div>
 </div>
 
-
+<div class="card">
+    <div class="card-header">
+        {{ trans('global.relatedData') }}
+    </div>
+    <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
+        <li class="nav-item">
+            <a class="nav-link" href="#user_user_goals" role="tab" data-toggle="tab">
+                {{ trans('cruds.userGoal.title') }}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#mentor_user_goals" role="tab" data-toggle="tab">
+                {{ trans('cruds.userGoal.title') }}
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane" role="tabpanel" id="user_user_goals">
+            @includeIf('admin.users.relationships.userUserGoals', ['userGoals' => $user->userUserGoals])
+        </div>
+        <div class="tab-pane" role="tabpanel" id="mentor_user_goals">
+            @includeIf('admin.users.relationships.mentorUserGoals', ['userGoals' => $user->mentorUserGoals])
+        </div>
+    </div>
+</div>
 
 @endsection

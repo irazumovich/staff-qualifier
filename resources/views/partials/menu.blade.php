@@ -147,18 +147,6 @@
                         </a>
                     </li>
                 @endcan
-                @can('resource_access')
-                    <li class="nav-item">
-                        <a href="{{ route("admin.resources.index") }}" class="nav-link {{ request()->is('admin/resources') || request()->is('admin/resources/*') ? 'active' : '' }}">
-                            <i class="fa-fw fas fa-cogs">
-
-                            </i>
-                            <p>
-                                <span>{{ trans('cruds.resource.title') }}</span>
-                            </p>
-                        </a>
-                    </li>
-                @endcan
                 @can('qualification_access')
                     <li class="nav-item">
                         <a href="{{ route("admin.qualifications.index") }}" class="nav-link {{ request()->is('admin/qualifications') || request()->is('admin/qualifications/*') ? 'active' : '' }}">
@@ -167,6 +155,18 @@
                             </i>
                             <p>
                                 <span>{{ trans('cruds.qualification.title') }}</span>
+                            </p>
+                        </a>
+                    </li>
+                @endcan
+                @can('user_goal_access')
+                    <li class="nav-item">
+                        <a href="{{ route("admin.user-goals.index") }}" class="nav-link {{ request()->is('admin/user-goals') || request()->is('admin/user-goals/*') ? 'active' : '' }}">
+                            <i class="fa-fw fas fa-cogs">
+
+                            </i>
+                            <p>
+                                <span>{{ trans('cruds.userGoal.title') }}</span>
                             </p>
                         </a>
                     </li>

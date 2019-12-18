@@ -7,6 +7,7 @@ use App\Goal;
 //use App\GoalQualification;
 use App\User;
 //use App\UserGoal;
+use App\UserGoal;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -38,22 +39,14 @@ class UserController extends Controller
 
     public function goals(User $user)
     {
-//        $goals = $user->goals()->get()->toArray();
-//        if (empty((array)$goals)) {
-//            \Log::info('here');
-//            $userQualification = $user->qualification_id;
-//            $userQualificationGoals = GoalQualification::whereQualificationId($userQualification)
-//                ->pluck('goal_id');
-//            foreach ($userQualificationGoals as $goalId) {
-//                UserGoal::create([
-//                    'goal_id' => $goalId,
-//                    'user_id' => $user->id,
-//                    'status' => 'Назначена'
-//                ]);
-//            }
-//        }
-
         $goals = $user->goals;
+
+        foreach ($goals as &$goal) {
+            if ($goal->pivot->status === 'Выполнена') {
+                $goal->assess_goals = UserGoal::whereStatus('Ожидает проверки')
+                    ->whereGoalId($goal->pivot->goal_id)->get();
+            }
+        }
 
         return $this->responseOk(GoalResource::collection($goals));
     }

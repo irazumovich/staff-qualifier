@@ -49,11 +49,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('goals/media', 'GoalController@storeMedia')->name('goals.storeMedia');
     Route::resource('goals', 'GoalController');
 
-    // Resources
-    Route::delete('resources/destroy', 'ResourceController@massDestroy')->name('resources.massDestroy');
-    Route::resource('resources', 'ResourceController');
-
     // Qualifications
     Route::delete('qualifications/destroy', 'QualificationController@massDestroy')->name('qualifications.massDestroy');
     Route::resource('qualifications', 'QualificationController');
+
+    // User Goals
+    Route::delete('user-goals/destroy', 'UserGoalController@massDestroy')->name('user-goals.massDestroy');
+    Route::post('user-goals/media', 'UserGoalController@storeMedia')->name('user-goals.storeMedia');
+    Route::resource('user-goals', 'UserGoalController');
 });

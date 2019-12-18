@@ -15,7 +15,7 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
-        $image = $this->image->id;
+        $image = $this->image ? $this->image : null;
         return [
             'id' => $this->id,
             'first_name' => $this->first_name,
@@ -24,7 +24,8 @@ class UserResource extends JsonResource
             'phone' => $this->phone,
             'email' => $this->email,
             'role' => $this->role,
-            'image' => Storage::url($this->image->id."/".$this->image->file_name)
+            'image' => Storage::url($image ? $image->id."/".$image->file_name : ''),
+            'access_token' => auth('api-jwt')->tokenById(auth('api-jwt')->user()->id),
         ];
     }
 }

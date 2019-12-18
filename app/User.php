@@ -136,6 +136,6 @@ class User extends Authenticatable implements HasMedia, JWTSubject
 
     public function goals()
     {
-        return $this->belongsToMany(Goal::class, UserGoal::class)->withPivot('id', 'status', 'result_file', 'mentor_id');
+        return $this->belongsToMany(Goal::class, UserGoal::class)->withPivot('id', 'status', 'result_file', 'mentor_id', 'comment');
     }
 }

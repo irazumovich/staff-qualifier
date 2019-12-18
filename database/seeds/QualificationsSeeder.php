@@ -12,18 +12,18 @@ class QualificationsSeeder extends Seeder
     public function run()
     {
         DB::table('qualifications')->insert([
-            'name' => 'Senior developer',
+            'name' => 'Senior developer - 1',
             'sign' => 'Senior-1',
             'description' => ''
         ]);
         DB::table('qualifications')->insert([
-            'name' => 'Middle developer',
+            'name' => 'Middle developer - 3',
             'sign' => 'Middle-3',
             'description' => '',
             'next_qualification' => 1,
         ]);
         DB::table('qualifications')->insert([
-            'name' => 'Middle developer',
+            'name' => 'Middle developer - 2',
             'sign' => 'Middle-2',
             'description' => '',
             'next_qualification' => 2,

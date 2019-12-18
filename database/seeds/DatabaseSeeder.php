@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
             CrmStatusTableSeeder::class,
             QualificationsSeeder::class,
             GoalsSeeder::class,
-            UserGoalsSeeder::class,
+//            UserGoalsSeeder::class,
         ]);
     }
 }

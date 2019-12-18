@@ -23,6 +23,7 @@ class CreateGoalsUsersTable extends Migration
             $table->unsignedInteger('mentor_id')->nullable();
             $table->foreign('mentor_id')->references('id')->on('users');
             $table->string('result_file')->nullable();
+            $table->string('comment')->nullable();
             $table->timestamps();
         });
     }

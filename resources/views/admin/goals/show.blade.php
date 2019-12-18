@@ -76,8 +76,8 @@
     </div>
     <ul class="nav nav-tabs" role="tablist" id="relationship-tabs">
         <li class="nav-item">
-            <a class="nav-link" href="#goal_resources" role="tab" data-toggle="tab">
-                {{ trans('cruds.resource.title') }}
+            <a class="nav-link" href="#goal_user_goals" role="tab" data-toggle="tab">
+                {{ trans('cruds.userGoal.title') }}
             </a>
         </li>
         <li class="nav-item">
@@ -87,8 +87,8 @@
         </li>
     </ul>
     <div class="tab-content">
-        <div class="tab-pane" role="tabpanel" id="goal_resources">
-            @includeIf('admin.goals.relationships.goalResources', ['resources' => $goal->goalResources])
+        <div class="tab-pane" role="tabpanel" id="goal_user_goals">
+            @includeIf('admin.goals.relationships.goalUserGoals', ['userGoals' => $goal->goalUserGoals])
         </div>
         <div class="tab-pane" role="tabpanel" id="qualification_goals_qualifications">
             @includeIf('admin.goals.relationships.qualificationGoalsQualifications', ['qualifications' => $goal->qualificationGoalsQualifications])
