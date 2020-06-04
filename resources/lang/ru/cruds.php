@@ -170,8 +170,8 @@ return [
         ],
     ],
     'goal'           => [
-        'title'          => 'Goal',
-        'title_singular' => 'Goal',
+        'title'          => 'Цели',
+        'title_singular' => 'Цели',
         'fields'         => [
             'id'                         => 'ID',
             'id_helper'                  => '',
@@ -192,8 +192,8 @@ return [
         ],
     ],
     'qualification'  => [
-        'title'          => 'Qualification',
-        'title_singular' => 'Qualification',
+        'title'          => 'Квалификации',
+        'title_singular' => 'Квалификации',
         'fields'         => [
             'id'                         => 'ID',
             'id_helper'                  => '',
@@ -216,8 +216,8 @@ return [
         ],
     ],
     'userGoal'       => [
-        'title'          => 'User Goal',
-        'title_singular' => 'User Goal',
+        'title'          => 'Цели пользователей',
+        'title_singular' => 'Цели пользователей',
         'fields'         => [
             'id'                 => 'ID',
             'id_helper'          => '',
