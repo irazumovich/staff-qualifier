@@ -216,6 +216,26 @@ class PermissionsTableSeeder extends Seeder
                 'id'    => '52',
                 'title' => 'qualification_access',
             ],
+            [
+                'id'    => '53',
+                'title' => 'user_goal_create',
+            ],
+            [
+                'id'    => '54',
+                'title' => 'user_goal_edit',
+            ],
+            [
+                'id'    => '55',
+                'title' => 'user_goal_show',
+            ],
+            [
+                'id'    => '56',
+                'title' => 'user_goal_delete',
+            ],
+            [
+                'id'    => '57',
+                'title' => 'user_goal_access',
+            ],
         ];
 
         Permission::insert($permissions);

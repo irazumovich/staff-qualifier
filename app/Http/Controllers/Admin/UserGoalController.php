@@ -19,7 +19,6 @@ class UserGoalController extends Controller
 {
     public function index()
     {
-        \Log::info(UserGoal::find(4)->mentor->name);
         abort_if(Gate::denies('user_goal_access'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
         $userGoals = UserGoal::all();
